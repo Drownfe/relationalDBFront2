@@ -9,14 +9,14 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 };
 export function getAllPost() {
     return __awaiter(this, void 0, void 0, function* () {
-        const response = yield fetch("http://localhost:8081/api/get/posts");
+        const response = yield fetch("http://localhost:8081/api/v1/get/all/post");
         const post = yield response.json();
         return post;
     });
 }
 export function createPost(post) {
     return __awaiter(this, void 0, void 0, function* () {
-        const response = yield fetch('http://localhost:8081/api/create/post', {
+        const response = yield fetch('http://localhost:8081/api/v1/create/post', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -28,7 +28,7 @@ export function createPost(post) {
 }
 export function deletePost(post) {
     return __awaiter(this, void 0, void 0, function* () {
-        const response = yield fetch('http://localhost:8081/api/delete/post', {
+        const response = yield fetch('http://localhost:8081/api/v1/delete/post', {
             method: 'DELETE',
             headers: {
                 'Content-Type': 'application/json'
@@ -40,7 +40,7 @@ export function deletePost(post) {
 }
 export function editPost(post) {
     return __awaiter(this, void 0, void 0, function* () {
-        const response = yield fetch('http://localhost:8081/api/update/post', {
+        const response = yield fetch('http://localhost:8081/api/v1/edit/post', {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json'
@@ -52,9 +52,7 @@ export function editPost(post) {
 }
 export function createComment(comment) {
     return __awaiter(this, void 0, void 0, function* () {
-        console.log("creando comentario");
-        console.log(comment);
-        const response = yield fetch('http://localhost:8081/api/create/comment', {
+        const response = yield fetch('http://localhost:8081/api/v1/create/comment', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -66,7 +64,7 @@ export function createComment(comment) {
 }
 export function deleteComment(commentId) {
     return __awaiter(this, void 0, void 0, function* () {
-        const response = yield fetch(`http://localhost:8081/api/delete/comment/${commentId}`, {
+        const response = yield fetch(`http://localhost:8081/api/v1/delete/comment/${commentId}`, {
             method: 'DELETE',
             headers: {
                 'Content-Type': 'application/json'
@@ -78,7 +76,7 @@ export function deleteComment(commentId) {
 }
 export function editComment(comment) {
     return __awaiter(this, void 0, void 0, function* () {
-        const response = yield fetch('http://localhost:8081/api/update/comment', {
+        const response = yield fetch('http://localhost:8081/api/v1/edit/comment', {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json'

@@ -1,25 +1,20 @@
 export interface PostI{
     id: number|null,
     title: string,
-    message: string,
-    numberOfLikes: number,
+    content: string,
+    number_of_likes: number,
     comments: commentsResponseI []
 }
 
 export interface commentsRequestI{
-    message: string,
-    fkPostId: number|null
+    content: string,
+    postIdPost: object
     
 }
 
 export interface commentsResponseI{
     id: number|null,
-    message: string,
-    fkPostId: number|null
-}
-
-export interface userLikeI{
-    id: number|null,
-    userName:string,
-    dni:number|null
+    content: string,
+    postIdPost: number|null
+    
 }

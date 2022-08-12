@@ -1,6 +1,6 @@
 import { commentsRequestI, PostI } from "../models/models.js"
 export async function getAllPost() {
-    const response:Response = await fetch("http://localhost:8081/api/get/posts")
+    const response:Response = await fetch("http://localhost:8081/api/v1/get/all/post")
 
     const post:PostI[] = await response.json()
 
@@ -8,7 +8,7 @@ export async function getAllPost() {
 }
 
 export async function createPost(post:PostI){
-    const response:Response = await fetch('http://localhost:8081/api/create/post', 
+    const response:Response = await fetch('http://localhost:8081/api/v1/create/post', 
     {
       method: 'POST',
       headers: {
@@ -21,7 +21,7 @@ export async function createPost(post:PostI){
   }
   
   export async function deletePost(post:PostI){
-    const response:Response = await fetch('http://localhost:8081/api/delete/post', 
+    const response:Response = await fetch('http://localhost:8081/api/v1/delete/post', 
     {
       method: 'DELETE',
       headers: {
@@ -34,7 +34,7 @@ export async function createPost(post:PostI){
   }
   
   export async function editPost(post:PostI){
-    const response:Response = await fetch('http://localhost:8081/api/update/post', 
+    const response:Response = await fetch('http://localhost:8081/api/v1/edit/post', 
     {
       method: 'PUT',
       headers: {
@@ -48,9 +48,7 @@ export async function createPost(post:PostI){
 
 
   export async function createComment(comment:commentsRequestI){
-    console.log("creando comentario")
-    console.log(comment)
-    const response:Response = await fetch('http://localhost:8081/api/create/comment', 
+    const response:Response = await fetch('http://localhost:8081/api/v1/create/comment', 
     {
       method: 'POST',
       headers: {
@@ -63,7 +61,7 @@ export async function createPost(post:PostI){
   }
   
   export async function deleteComment(commentId: number){
-    const response:Response = await fetch(`http://localhost:8081/api/delete/comment/${commentId}`, 
+    const response:Response = await fetch(`http://localhost:8081/api/v1/delete/comment/${commentId}`, 
     {
       method: 'DELETE',
       headers: {
@@ -76,7 +74,7 @@ export async function createPost(post:PostI){
   }
   
   export async function editComment(comment:commentsRequestI){
-    const response:Response = await fetch('http://localhost:8081/api/update/comment', 
+    const response:Response = await fetch('http://localhost:8081/api/v1/edit/comment', 
     {
       method: 'PUT',
       headers: {
