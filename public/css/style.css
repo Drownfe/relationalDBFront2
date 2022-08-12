@@ -1,0 +1,46 @@
+body {
+    background-image: url(/public/images/cool-background.png);
+}
+
+h1 {
+    text-align: center;
+    font-size: 30px;
+    font-weight: 600;
+    color: #fdfdfe;
+    text-shadow: 0px 0px 5px #b393d3, 0px 0px 10px #b393d3, 0px 0px 10px #b393d3, 0px 0px 20px #b393d3;
+    margin-bottom: 3rem;
+}
+
+.single_post_container {
+    background-color: rgb(157, 225, 240);
+    border: 5px solid black;
+    text-align: center;
+    border-radius: 30px;
+    width: 300px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin-top: 1rem;
+    color: black;
+    padding-bottom: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.single_comment_container {
+    background-color: rgb(245, 248, 183);
+    border: 3px solid black;
+    border-radius: 30px;
+    text-align: center;
+    margin-top: 1rem;
+}
+
+button {
+    width: 80px;
+    border: 2px solid black;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    margin-top: 0.3rem;
+    margin-bottom: 0.3rem;
+    border-radius: 30px;
+    background-color: aqua;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
