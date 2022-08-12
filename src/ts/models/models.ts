@@ -7,17 +7,19 @@ export interface PostI{
 }
 
 export interface commentsRequestI{
-    //id: number|null,
     message: string,
-    //number_of_likes: number,
-    fkPostId: object
+    fkPostId: number|null
     
 }
 
 export interface commentsResponseI{
     id: number|null,
     message: string,
-    //number_of_likes: number,
     fkPostId: number|null
-    
+}
+
+export interface userLikeI{
+    id: number|null,
+    userName:string,
+    dni:number|null
 }

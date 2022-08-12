@@ -33,6 +33,12 @@ h1 {
     margin-top: 1rem;
 }
 
+.single-post-like-button {
+    justify-content: left;
+    margin: auto;
+    background-color: rgb(255, 150, 150);
+}
+
 button {
     width: 80px;
     border: 2px solid black;

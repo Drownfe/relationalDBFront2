@@ -1,11 +1,11 @@
 import { createPost, getAllPost, editPost, deletePost, createComment, deleteComment } from "./request/asyncRequest.js";
 window.showAllPost = showAllPost;
-
 function inserComment(inputId) {
-    const contentInput = document.getElementsByClassName('content-input');
+    const contentInput = document.getElementById(inputId);
     console.log(contentInput.value);
     if (contentInput.value) {
         const id = inputId.split('-')[1];
+        console.log(contentInput.value);
         const newComment = {
             // id: null,
             message: contentInput.value,
@@ -21,12 +21,10 @@ function inserComment(inputId) {
         }).then(() => showAllPost());
     }
 }
-
 function materializePost(posts) {
     const divRoot = document.querySelector("#root");
     posts.forEach(post => renderPost(post, divRoot));
 }
-
 function renderPost(post, divRoot) {
     "container-post-${post.id}";
     const singlePostContainer = document.createElement('div');
@@ -66,11 +64,9 @@ function renderPost(post, divRoot) {
     newCommentForm.appendChild(commentFormButton);
     singlePostContainer.appendChild(newCommentForm);
 }
-
 function materializeComments(comments, postContainer) {
     comments.forEach(comment => renderComment(comment, postContainer));
 }
-
 function renderComment(comment, postContainer) {
     const singleCommentContainer = document.createElement('div');
     singleCommentContainer.className = `single_comment_container-${comment.id}`;
@@ -91,7 +87,6 @@ function renderComment(comment, postContainer) {
 }
 const formPost = document.querySelector('.post-form');
 let posts;
-
 function showAllPost() {
     const postDiv = document.getElementById('root');
     postDiv.innerHTML = '';
@@ -101,7 +96,6 @@ function showAllPost() {
     });
 }
 formPost === null || formPost === void 0 ? void 0 : formPost.addEventListener('submit', (e) => handleSubmit(e));
-
 function handleSubmit(e) {
     e.preventDefault();
     const titleInput = document.querySelector('.title-input');
@@ -122,7 +116,6 @@ function handleSubmit(e) {
         }).then(() => showAllPost());
     }
 }
-
 function handleEdit(post) {
     const titleInput = document.querySelector('.title-input');
     const contentInput = document.querySelector('.content-input');
@@ -137,7 +130,6 @@ function handleEdit(post) {
     titleInput.value = post.title;
     contentInput.value = post.message;
 }
-
 function executeEdition(post, title, content) {
     const postEdited = {
         id: post.id,
@@ -163,7 +155,6 @@ function executeEdition(post, title, content) {
         }
     });
 }
-
 function handleDelete(post) {
     deletePost(post).then(response => {
         if (response.status === 200) {
